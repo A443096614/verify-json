@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<template id="demo" memo="demo">
+		<field memo="类型" name="type" isNull="true" isValid="true" maxLength="5" minLength="2"/>
+		<field memo="状态" name="status" isNull="false" isValid="true" maxLength="5" minLength="2" maxValue="666" minValue="333" contains="1,2,3">
+			<precondition preName="type" preValue="null" contains="1"></precondition>
+		</field>
+		<field  memo="对象" name="obj" isNull="true" isValid="true" fieldType ="obj" linkTemplateId="demoChild" maxLength="5" 
+			minLength="2" maxValue="666" minValue="333" contains="1,2,3"/>
+			
+		<field memo="金额" name="amt" isNull="false" isValid="true" maxValue="100" minValue="20"></field>
+	</template>
+	
+	<template id="demoChild" memo="嵌套验证">
+		<field memo="类型" name="cType" isNull="false" isValid="true" maxLength="5" minLength="2"/>
+	</template>
+</templates>
